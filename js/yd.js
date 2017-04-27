@@ -1,13 +1,7 @@
 //开启音乐（手机端不需自动播放）
-
-//window.ontouchstart    触摸屏幕
-$('#start_img').click(function () {
+window.ontouchstart = function () {
     document.getElementById('music').play();
-    $('.g_box').css('top','-100%');
-});
-setTimeout(function () {
-    $('#prompt_img').css('display', 'block')
-}, 5000);
+}
 
 //判断屏幕旋转
 
@@ -35,6 +29,21 @@ var num = 0;
 var img = ['images/bg/bg.jpg', 'images/bg/bg1.jpg', 'images/bg/bg2.jpg', 'images/bg/bg3.jpg', 'images/bg/bg4.jpg'];
 var page4_off = true;
 var page5_off = true;
+
+var n = 0;
+
+for (var i = 0; i < img.length; i++) {
+    var oImg = new Image();
+    oImg.src = img[i];
+    oImg.onload = function () {
+        n++;
+        if (n == img.length) {
+            $('.g_box').css('top', '-100%');
+        }
+    }
+
+}
+
 
 //1>初始赋予背景图  第一页效果
 function Bg_img() {
