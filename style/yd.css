@@ -334,8 +334,11 @@ main {
     top: 0;
     width: 100%;
     height: 100%;
+    font-size:2.4rem;
+    line-height:700px;
+    text-align:center;
     background-color: pink;
-    transition: .35s;
+    transition: 1s;
     z-index: 99;
 }
 #start_img{
